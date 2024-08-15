@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2? family= Bungee+Spice & family= Itim & family= Kanit & family= Source+Sans+Pro & display=swap');
+*{
+    color: white;
+    padding: 0px;
+    text-decoration: none;
+}
+body{
+    background:#1C1C1C;
+}
+
+img{
+    width: 500px;
+}
+.cabecalho{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 24px;
+    border-bottom: 0.4px solid #FFF2E7;
+    flex-direction: row;
+}
+.cabecalho-menu{
+    display: flex;
+    gap: 32px;
+}
+.cabecalho-menu-item{
+    
+    font-size: 20px;
+    
+    font-family: 'Itim', cursive;
+
+
+}
+.nome{
+    color: aqua;
+}
+.cont-principal-apresentacao{
+    font-size: 30px;
+    color: whitesmoke;
+    font-family: 'Itim', cursive;
+}
+
+.img-apresentacao{
+    animation: float 6s ease-out infinite;
+}
+@keyframes float {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-40px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+.conteudo-pag-img{
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    border-bottom: 0.4px solid #FFF2E7;
+    flex-direction: row;
+    justify-content: center;
+}
+/*
+Animacao de digitacao de texto
+
+.text-animado{
+    color: #fc6d6d;
+}
+.container .text-animado{
+    margin-left: 15px;
+    line-height: 90px;
+    height: 90px;
+    overflow: hidden;
+}
+.text-animado li{
+    color:#fc6d6d;
+    list-style: none;
+    font-size: 60px;
+    font-weight: 500;
+    left: 0;
+    position: relative;
+    top: 0;
+    animation: slide 6s steps(4) infinite;
+}
+.text-animado span::after{
+    content: "";
+    position: absolute ;
+    width: 100%;
+    height: 120%;
+    left: 0;
+    border-left:  2px solid #fc6d6d;
+    animation: typing 3s steps(10) infinite;
+    background: black;
+}
+.text-animado li span{
+    position: relative;
+}
+@keyframes typing {
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 70px;
+    }
+    
+}
+@keyframes slide {
+    100%{
+        top: -360px;
+    }
+}
+.text-animado span{
+    position: relative;
+}
+*/
