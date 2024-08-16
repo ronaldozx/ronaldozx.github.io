@@ -540,7 +540,7 @@ nav{
     margin-top: 20px;
 }
 .cardCert {
-    background-color: rgb(37, 37, 37);
+    background-color: rgba(37, 37, 37, 0);
     width: 300px;
     height: 400px;
     margin: 0 0 0 50px;
