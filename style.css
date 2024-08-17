@@ -20,7 +20,10 @@ transition: all 0.5s ease;
 }
 .nav-link{
     color: white;
-    font-family: "Anton SC", sans-serif ;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
     font-size: 16px;
     margin-right: 50px;
     font-weight: bold;
@@ -45,8 +48,10 @@ nav{
 .titulo{
     font-size: 25px;
     color: rgb(212, 212, 212);
-    font-family: "Anton SC", sans-serif ;
-    width: 100%;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;    width: 100%;
     transition: linear 0.5s;
 }
 
@@ -79,11 +84,14 @@ nav{
 .nomeTitulo{
     font-size: 50px;
     color: #26b9dd;
-    font-family: "Open Sans", sans-serif;
-    width: 12ch;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 700;
+     font-style: normal;
+    width: 16ch;
     white-space: nowrap;
     overflow: hidden;
-    animation: typing 2s steps(11), blinking 0.5s infinite step-end alternate;
+    animation: typing 2s steps(16), blinking 0.5s infinite step-end alternate;
     text-shadow: 0 0 3px #26b9dd;
     text-align: center;
 }
@@ -678,7 +686,7 @@ nav{
         margin-top: 100px;
     }
     .divCxContato{
-        height: 100px;
+        height: 150px;
         width: 100%;
     }
     
