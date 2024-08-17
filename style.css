@@ -256,8 +256,15 @@ nav{
     font-family: "Anton SC", sans-serif ;
     font-weight: bold;
 }
+.contTitForm{
+    margin-top: 70px;
+    margin-bottom: 70px;
+    font-family: "Anton SC", sans-serif ;
+    font-weight: bold;
+}
 .imgFiap{
     border-radius: 14px;
+    
 }
 .divContForm{
     display: flex;
@@ -604,8 +611,21 @@ nav{
     /* corpo do site */
     .divApre{
         flex-direction: column;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
-    
+    .titulo{
+        width: 100%;
+        justify-content: right;
+        
+    }
+    .divCenter{
+        margin-top: 100px;
+    }
+    .divTexto{
+        width: 100%;
+    }
     
     .imgPx{
         width: 100%;
@@ -615,6 +635,8 @@ nav{
     }
     .divTxtSobre{
         width: 100%;
+        font-size: medium;
+        padding: 15px;
     }
     .divContHab{
         flex-direction: column;
@@ -632,17 +654,25 @@ nav{
     }
     .cardCert{
         margin: 0;
+        margin-bottom: 20px;
+        border: solid black;
+        border-width: 0.5px;
     }
     .divImgProj{
         flex-direction: column;
     }
     .divContForm{
         flex-direction: column;
-        margin: 12.5%;
+        justify-content: center;
+        align-items: center;
     }
     .divContato{
         flex-direction: column;
         height: 350px;
+        width: 100%;
+    }
+    .divCxContato{
+        width: 100%;
     }
     footer{
         margin-top: 100px;
@@ -650,11 +680,9 @@ nav{
     .divCxContato{
         height: 500px;
     }
-    .divTitHab{
-        width: 70%;
-        display: flex;
-    }
+    
     .imgEu{
         width: 100%;
     }
+    
 }
