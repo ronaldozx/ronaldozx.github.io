@@ -67,8 +67,9 @@ nav{
     display: flex;
     align-items: center;
     width: 100%;
-    justify-content: center;
+    justify-content:center;
     height: 97vh;
+    margin: 0px;
 }
 .apreTitulo{
     font-size: 50px;
@@ -90,18 +91,15 @@ nav{
     display: flex; 
     justify-content: center;
 }
-.fotoPx{
-    width: 50%;
-    display: flex;
-    justify-content: center;
-}
+
 .divCenterBtn{
     display: flex; 
     justify-content: center;
     margin-top: 20px;
 }
 .divTexto{
-    width: 50%;
+    width: 34%;
+    margin: 0;
 }
 .imgLogos{
     width: 20px;
@@ -197,8 +195,8 @@ nav{
     border-color:blueviolet;
 }
 .imgPx{
-   width: 500px;
-   height: 600px;
+   width: 35%;
+   height: 60%;
    transition: all 0.5s;
 }
 .imgPx:hover{
@@ -298,7 +296,7 @@ nav{
 
 }
 .divTxtSobre{
-    width: 500px;
+    width: 30%;
     font-size: 24px;
 }
 .divDiff{
@@ -370,7 +368,7 @@ nav{
     border: #10b4dd;
     box-shadow: 0 0 12px 0.5px #10b4dd;
     width: 400px;
-    height: 120px;
+    height: 100%;
     border-style: solid;
     border-radius: 40px;
     display: block;
@@ -600,4 +598,63 @@ nav{
     background-position: 0 0; /* Move o gradiente para preencher o botão da esquerda para a direita */
     color: white; /* Mantém a cor do texto branca */
     
+}
+
+@media screen and (max-width:1020px) {
+    /* corpo do site */
+    .divApre{
+        flex-direction: column;
+    }
+    
+    
+    .imgPx{
+        width: 100%;
+    }
+    .divSobre{
+        flex-direction: column;
+    }
+    .divTxtSobre{
+        width: 100%;
+    }
+    .divContHab{
+        flex-direction: column;
+    }
+    .flip-card{
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .certificados{
+        flex-direction: column;
+        margin: 0;
+    }
+    .cardCert{
+        margin: 0;
+    }
+    .divImgProj{
+        flex-direction: column;
+    }
+    .divContForm{
+        flex-direction: column;
+        margin: 12.5%;
+    }
+    .divContato{
+        flex-direction: column;
+        height: 350px;
+    }
+    footer{
+        margin-top: 100px;
+    }
+    .divCxContato{
+        height: 500px;
+    }
+    .divTitHab{
+        width: 70%;
+        display: flex;
+    }
+    .imgEu{
+        width: 100%;
+    }
 }
