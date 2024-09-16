@@ -115,6 +115,7 @@ nav.scrolled{
 .divTexto{
     width: 34%;
     margin: 0;
+    margin-right: 200px;
 }
 .imgLogos{
     width: 20px;
@@ -629,7 +630,8 @@ nav.scrolled{
         flex-direction: column;
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+        
     }
     .titulo{
         width: 100%;
@@ -637,10 +639,11 @@ nav.scrolled{
         
     }
     .divCenter{
-        margin-top: 100px;
+        margin-top: 0px;
     }
     .divTexto{
         width: 100%;
+        margin: 0;
     }
     
     .imgPx{
@@ -700,6 +703,9 @@ nav.scrolled{
     
     .imgEu{
         width: 100%;
+    }
+    .divTexto{
+        margin-top: 100px;
     }
     
 }
