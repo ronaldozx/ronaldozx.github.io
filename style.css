@@ -633,66 +633,7 @@ nav.scrolled{
     display: block;
 }
 
-.card-maior{
-    display: flex;
-    justify-content: center;
-    width: 350px;
-    height: 320px;
-    position: relative;
-    background-color: #ffffff00;
-    border-radius: 20px;
-    transition: 1s;
-    margin: 30px;
-    color: white;
-    border: none;
 
-}
-.card-maior:hover{
-    height: 670px;
-    background-color: #ffffff00;
-    border: solid;
-    border-radius: 20px;
-    border-color:white ;
-    color: white;
-    margin-top: 180px;
-}
-.card-maior .img-box{
-    position: absolute;
-    width: 100%;
-    height: 75%;
-    top: 0px;
-    transition: 1s;
-
-}
-.card-maior:hover .img-box{
-    top: -250px;
-    scale: 0.75;
-    
-}
-.card-maior .img-box img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-}
-.card-maior .content {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    position: absolute;
-    top: 240px;
-    width: 100%;
-    padding: 0px 50px;
-    text-align: center;
-    height:80px;
-    overflow: hidden;
-}
-
-.card-maior:hover .content{
-    top: 210px;
-    height: 460px;
-    transition: 1s;
-}
 .divTit{
     width: 100%;
 }
