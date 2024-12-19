@@ -469,7 +469,7 @@ nav.scrolled{
 
 }
 .card:hover{
-    height: 590px;
+    height: 600px;
     background-color: #ffffff00;
     border: solid;
     border-radius: 20px;
@@ -510,8 +510,8 @@ nav.scrolled{
 }
 
 .card:hover .content{
-    top: 210px;
-    height: 350px;
+    top: 230px;
+    height: 380px;
     transition: 1s;
 
 }
