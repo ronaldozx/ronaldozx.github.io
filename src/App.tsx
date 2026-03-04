@@ -2,13 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './styles/GlobalStyle';
 import { theme } from './styles/theme';
-import { LanguageProvider } from './i18n/LanguageContext';
+import { LanguageProvider, useLanguage } from './i18n/LanguageContext';
 import { Navbar, GalaxyBackground, Footer, ScrollToTop, Intro } from './components';
 import { Hero, About, Skills, Education, Courses, Projects, Contact } from './sections';
 import { personalInfo, socialLinks, navItems } from './constants/personalInfo';
 
 const AppContent: React.FC = () => {
   const [showIntro, setShowIntro] = useState(true);
+  const { language } = useLanguage();
+
+  useEffect(() => {
+    const titles: Record<string, string> = {
+      pt: 'Ronaldo | Desenvolvedor',
+      en: 'Ronaldo | Developer',
+      es: 'Ronaldo | Desarrollador',
+    };
+    document.title = titles[language] || titles['pt'];
+  }, [language]);
 
   useEffect(() => {
     const handleSmoothScroll = (e: MouseEvent) => {

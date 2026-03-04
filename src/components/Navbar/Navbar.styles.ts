@@ -66,9 +66,10 @@ export const NavContent = styled.div`
   max-width: 1100px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   position: relative;
   padding: 0 ${({ theme }) => theme.spacing.md};
+  gap: ${({ theme }) => theme.spacing.xl};
 `;
 
 export const Logo = styled.div`
@@ -86,6 +87,7 @@ export const Logo = styled.div`
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-left: ${({ theme }) => theme.spacing.md};
+  margin-right: auto;
   cursor: pointer;
   transition: transform 0.3s ease;
   filter: drop-shadow(0 0 20px rgba(97, 218, 251, 0.3));
@@ -184,4 +186,6 @@ export const NavRight = styled.div`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.spacing.md};
+  margin-left: auto;
+  margin-right: ${({ theme }) => theme.spacing.md};
 `;

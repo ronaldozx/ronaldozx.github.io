@@ -45,11 +45,6 @@ export const Navbar: React.FC<NavbarProps> = ({ logo, navItems }) => {
         </NavList>
         <NavRight>
           <LanguageSwitcher />
-          <NavDots>
-            <Dot />
-            <Dot />
-            <Dot />
-          </NavDots>
         </NavRight>
       </NavContent>
     </NavbarContainer>

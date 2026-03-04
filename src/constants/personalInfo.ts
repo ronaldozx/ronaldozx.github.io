@@ -13,13 +13,13 @@ export const personalInfo: PersonalInfo = {
 export const socialLinks: SocialLink[] = [
   {
     name: 'GitHub',
-    url: 'https://github.com/seuusuario',
+    url: 'https://github.com/ronaldozx',
     icon: FaGithub,
     ariaLabel: 'github',
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/in/seuusuario',
+    url: 'https://www.linkedin.com/in/ronaldo-c%C3%A9sar/',
     icon: FaLinkedin,
     ariaLabel: 'linkedin',
   },

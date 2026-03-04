@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
           </FooterDescription>
           <SocialLinks>
             <SocialLink
-              href="https://github.com/seuusuario"
+              href="https://github.com/ronaldozx"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
               {React.createElement(FaGithub as any)}
             </SocialLink>
             <SocialLink
-              href="https://linkedin.com/in/seuusuario"
+              href="https://www.linkedin.com/in/ronaldo-c%C3%A9sar/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
