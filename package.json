@@ -1,6 +1,7 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
+  "homepage": "https://ronaldozx.github.io",
   "private": true,
   "description": "Portfolio pessoal desenvolvido com React, TypeScript e Styled Components",
   "author": "Ronaldo César",
@@ -38,7 +39,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.{ts,tsx}",
-    "format": "prettier --write \"src/**/*.{ts,tsx,css,md}\""
+    "format": "prettier --write \"src/**/*.{ts,tsx,css,md}\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -59,6 +62,7 @@
     ]
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.36"
+    "@types/styled-components": "^5.1.36",
+    "gh-pages": "^6.3.0"
   }
 }
