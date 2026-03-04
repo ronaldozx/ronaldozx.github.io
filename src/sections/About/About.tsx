@@ -60,7 +60,7 @@ export const About: React.FC<AboutProps> = ({ imageUrl = '/eu.jpg' }) => {
                 <StatLabel>{t.about.experience}</StatLabel>
               </StatCard>
               <StatCard>
-                <StatNumber>5</StatNumber>
+                <StatNumber>15</StatNumber>
                 <StatLabel>{t.about.projects}</StatLabel>
               </StatCard>
               <StatCard>
