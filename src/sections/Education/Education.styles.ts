@@ -58,7 +58,6 @@ export const SectionSubtitle = styled.p`
   font-size: 1.1rem;
 `;
 
-/* ── Timeline ─────────────────────────────────────────────── */
 
 export const Timeline = styled.div`
   position: relative;
@@ -88,7 +87,6 @@ export const TimelineItem = styled.div`
     margin-bottom: 0;
   }
 
-  /* dot */
   &::before {
     content: '';
     position: absolute;

@@ -22,20 +22,17 @@ export const GalaxyBackground: React.FC = () => {
     canvas.width = width;
     canvas.height = height;
 
-    // Estrelas normais — paleta fria/neutra (menos rosa, mais realista)
     const starColors = ['#ffffff', '#e8f4ff', '#c8e8ff', '#a0c8ff', '#d0d8ff', '#f0f0ff', '#b8d8ff'];
     const stars: Star[] = Array.from({ length: STAR_COUNT }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      r: Math.random() ** 2.5 * 2.8 + 0.2, // distribuição exponencial: muitas pequenas, poucas grandes
+      r: Math.random() ** 2.5 * 2.8 + 0.2, 
       phase: Math.random() * Math.PI * 2,
       speed: Math.random() * 0.4 + 0.05,
       color: starColors[Math.floor(Math.random() * starColors.length)],
     }));
 
-    // Via Láctea — banda diagonal densa de micro-estrelas
     const milkyWay: Star[] = Array.from({ length: MILKY_WAY_COUNT }, () => {
-      // Banda diagonal de canto sup-dir ao canto inf-esq
       const t2 = Math.random();
       const cx = width * 0.85 - t2 * width * 1.1;
       const cy = height * 0.05 + t2 * height * 0.9;
@@ -51,7 +48,6 @@ export const GalaxyBackground: React.FC = () => {
       };
     });
 
-    // Poeira cósmica
     const dust: Star[] = Array.from({ length: DUST_COUNT }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
@@ -70,7 +66,6 @@ export const GalaxyBackground: React.FC = () => {
 
       ctx.clearRect(0, 0, width, height);
 
-      // Fundo base — gradiente profundo e neutro
       const bg = ctx.createLinearGradient(0, 0, 0, height);
       bg.addColorStop(0, '#030610');
       bg.addColorStop(0.45, '#020408');
@@ -78,8 +73,6 @@ export const GalaxyBackground: React.FC = () => {
       ctx.fillStyle = bg;
       ctx.fillRect(0, 0, width, height);
 
-      // --- Nebulosas sutis (menos saturadas, mais realistas) ---
-      // Nebulosa azul-profunda — esquerda
       const n1 = ctx.createRadialGradient(width * 0.12, height * 0.55, 0, width * 0.12, height * 0.55, width * 0.42);
       n1.addColorStop(0,   'rgba(40, 90, 180, 0.18)');
       n1.addColorStop(0.3, 'rgba(30, 65, 140, 0.12)');
@@ -88,7 +81,6 @@ export const GalaxyBackground: React.FC = () => {
       ctx.fillStyle = n1;
       ctx.fillRect(0, 0, width, height);
 
-      // Nebulosa violeta — centro-direita
       const n2 = ctx.createRadialGradient(width * 0.72, height * 0.38, 0, width * 0.72, height * 0.38, width * 0.5);
       n2.addColorStop(0,   'rgba(90, 50, 180, 0.15)');
       n2.addColorStop(0.35,'rgba(70, 35, 140, 0.10)');
@@ -97,7 +89,6 @@ export const GalaxyBackground: React.FC = () => {
       ctx.fillStyle = n2;
       ctx.fillRect(0, 0, width, height);
 
-      // Nebulosa teal — baixo-centro
       const n3 = ctx.createRadialGradient(width * 0.5, height * 0.92, 0, width * 0.5, height * 0.92, width * 0.3);
       n3.addColorStop(0,   'rgba(20, 120, 130, 0.14)');
       n3.addColorStop(0.4, 'rgba(10,  80,  95, 0.08)');
@@ -106,7 +97,6 @@ export const GalaxyBackground: React.FC = () => {
       ctx.fillStyle = n3;
       ctx.fillRect(0, 0, width, height);
 
-      // Nebulosa azul-fria sutil — topo-direita
       const n4 = ctx.createRadialGradient(width * 0.9, height * 0.1, 0, width * 0.9, height * 0.1, width * 0.28);
       n4.addColorStop(0,   'rgba(60, 140, 220, 0.12)');
       n4.addColorStop(0.5, 'rgba(30,  90, 160, 0.06)');
@@ -114,7 +104,6 @@ export const GalaxyBackground: React.FC = () => {
       ctx.fillStyle = n4;
       ctx.fillRect(0, 0, width, height);
 
-      // --- Via Láctea ---
       for (const s of milkyWay) {
         const alpha = (0.15 + 0.25 * Math.abs(Math.sin(s.phase + t * s.speed)));
         ctx.save();
@@ -126,7 +115,6 @@ export const GalaxyBackground: React.FC = () => {
         ctx.restore();
       }
 
-      // --- Poeira ---
       for (const d of dust) {
         const alpha = 0.2 + 0.35 * Math.abs(Math.sin(d.phase + t * d.speed));
         ctx.save();
@@ -138,13 +126,11 @@ export const GalaxyBackground: React.FC = () => {
         ctx.restore();
       }
 
-      // --- Estrelas ---
       for (const s of stars) {
         const alpha = 0.4 + 0.6 * Math.abs(Math.sin(s.phase + t * s.speed));
         ctx.save();
         ctx.globalAlpha = alpha;
 
-        // Halo suave nas maiores
         if (s.r > 1.8) {
           const halo = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 5);
           halo.addColorStop(0, s.color.replace(')', ', 0.3)').replace('rgb', 'rgba'));
@@ -156,7 +142,6 @@ export const GalaxyBackground: React.FC = () => {
           ctx.fill();
         }
 
-        // Núcleo
         ctx.globalAlpha = alpha;
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
@@ -165,7 +150,6 @@ export const GalaxyBackground: React.FC = () => {
         ctx.shadowBlur = s.r > 2 ? 14 : s.r > 1.5 ? 8 : 4;
         ctx.fill();
 
-        // Cruz-glint nas estrelas mais brilhantes
         if (s.r > 2.2 && alpha > 0.85) {
           const glintLen = s.r * 8;
           ctx.globalAlpha = alpha * 0.35;
@@ -182,7 +166,6 @@ export const GalaxyBackground: React.FC = () => {
         ctx.restore();
       }
 
-      // Vignette — borda escura para profundidade
       const vignette = ctx.createRadialGradient(
         width / 2, height / 2, height * 0.25,
         width / 2, height / 2, height * 0.92

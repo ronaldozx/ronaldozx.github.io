@@ -7,7 +7,6 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  /* ── Scrollbar personalizada ── */
   ::-webkit-scrollbar {
     width: 6px;
   }
@@ -33,7 +32,6 @@ export const GlobalStyle = createGlobalStyle`
     );
   }
 
-  /* Firefox */
   * {
     scrollbar-width: thin;
     scrollbar-color: ${({ theme }) => theme.colors.primary} #06070f;

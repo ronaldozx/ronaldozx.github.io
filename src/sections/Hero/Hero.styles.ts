@@ -68,7 +68,6 @@ export const HeroSection = styled.main`
   z-index: ${({ theme }) => theme.zIndex.content};
   overflow: visible;
 
-  /* Elementos decorativos */
   &::before {
     content: '';
     position: absolute;
@@ -121,7 +120,6 @@ export const HeroContent = styled.div`
   animation: ${fadeInRight} 1s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   
-  /* Card de fundo sutil */
   &::before {
     content: '';
     position: absolute;

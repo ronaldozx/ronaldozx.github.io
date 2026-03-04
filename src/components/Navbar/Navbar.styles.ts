@@ -16,7 +16,6 @@ export const NavbarContainer = styled.nav`
   margin: 0 auto;
   border-radius: ${({ theme }) => theme.borderRadius.lg};
 
-  /* Liquid Glass Effect - iPhone Style */
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.08) 0%,

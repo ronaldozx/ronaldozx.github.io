@@ -46,7 +46,6 @@ export const Button = styled.a<ButtonProps>`
   backdrop-filter: blur(10px);
   animation: ${({ variant }) => (variant === 'gradient' ? pulse : 'none')} 3s ease-in-out infinite;
 
-  /* Efeito de brilho */
   &::before {
     content: '';\n    position: absolute;
     top: 0;
@@ -62,7 +61,6 @@ export const Button = styled.a<ButtonProps>`
     transition: left 0.6s ease;
   }
 
-  /* Partículas flutuantes no hover */
   &::after {
     content: '';
     position: absolute;
