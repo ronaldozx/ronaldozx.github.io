@@ -1,9 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
   html {
     overflow-x: hidden;
-    width: 100%;
   }
 
   * {
@@ -47,12 +52,18 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     background: ${({ theme }) => theme.colors.background.main};
-    min-height: 100vh;
+    min-height: 100dvh;
+    min-height: -webkit-fill-available;
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
     color: ${({ theme }) => theme.colors.text.primary};
     overflow-x: hidden;
     position: relative;
+  }
+
+  html {
+    min-height: 100%;
+    min-height: -webkit-fill-available;
   }
 
   .shooting-star {
