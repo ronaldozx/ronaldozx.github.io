@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
+import { useLanguage } from '../../i18n/LanguageContext';
 
 const fadeIn = keyframes`
   from {
@@ -209,6 +210,7 @@ interface IntroProps {
 export const Intro: React.FC<IntroProps> = ({ onComplete }) => {
   const [isExiting, setIsExiting] = useState(false);
   const [dots, setDots] = useState('');
+  const { t } = useLanguage();
 
   useEffect(() => {
     const dotsInterval = setInterval(() => {
@@ -234,11 +236,11 @@ export const Intro: React.FC<IntroProps> = ({ onComplete }) => {
     <IntroContainer $isExiting={isExiting}>
       <IntroContent>
         <Logo>RC</Logo>
-        <Name>Ronaldo César Del Papa Bofe</Name>
-        <Role>Desenvolvedor Web Junior</Role>
+        <Name>{t.intro.name}</Name>
+        <Role>{t.intro.role}</Role>
         <Line />
         <LoadingText>
-          Carregando Portfolio<Dots>{dots}</Dots>
+          {t.intro.loading}<Dots>{dots}</Dots>
         </LoadingText>
       </IntroContent>
     </IntroContainer>

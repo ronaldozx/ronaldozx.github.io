@@ -1,6 +1,7 @@
 import React, { useState, FormEvent } from 'react';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { ScrollReveal } from '../../components';
+import { useLanguage } from '../../i18n/LanguageContext';
 import {
   ContactSection,
   ContactContainer,
@@ -24,6 +25,7 @@ import {
 } from './Contact.styles';
 
 export const Contact: React.FC = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -32,7 +34,7 @@ export const Contact: React.FC = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    alert('Mensagem enviada com sucesso!');
+    alert(t.contact.form.submit);
     setFormData({ name: '', email: '', message: '' });
   };
 
@@ -50,16 +52,13 @@ export const Contact: React.FC = () => {
       <ContactContainer>
         <ScrollReveal animation="fadeInLeft">
           <ContactInfo>
-            <SectionTitle>Entre em Contato</SectionTitle>
-            <ContactDescription>
-              Estou sempre aberto a novas oportunidades e colaborações. Vamos
-              conversar sobre seu próximo projeto!
-            </ContactDescription>
+            <SectionTitle>{t.contact.title}</SectionTitle>
+            <ContactDescription>{t.contact.subtitle}</ContactDescription>
             <ContactMethods>
               <ContactMethod>
               <ContactIcon>{React.createElement(FaEnvelope as any, { style: { color: '#fff' } })}</ContactIcon>
               <ContactDetails>
-                <ContactLabel>Email</ContactLabel>
+                <ContactLabel>{t.contact.email}</ContactLabel>
                 <ContactValue href="mailto:bofe.ronaldo18@gmail.com">
                   bofe.ronaldo18@gmail.com
                 </ContactValue>
@@ -68,7 +67,7 @@ export const Contact: React.FC = () => {
             <ContactMethod>
               <ContactIcon>{React.createElement(FaPhone as any, { style: { color: '#fff' } })}</ContactIcon>
               <ContactDetails>
-                <ContactLabel>Telefone</ContactLabel>
+                <ContactLabel>{t.contact.phone}</ContactLabel>
                 <ContactValue href="tel:+5511941756013">
                   +55 (11) 94175-6013
                 </ContactValue>
@@ -105,42 +104,42 @@ export const Contact: React.FC = () => {
         <ScrollReveal animation="fadeInRight" delay={0.2}>
           <ContactForm onSubmit={handleSubmit}>
           <FormGroup>
-            <FormLabel htmlFor="name">Nome</FormLabel>
+            <FormLabel htmlFor="name">{t.contact.form.nameLabel}</FormLabel>
             <FormInput
               type="text"
               id="name"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Seu nome completo"
+              placeholder={t.contact.form.namePlaceholder}
               required
             />
           </FormGroup>
           <FormGroup>
-            <FormLabel htmlFor="email">Email</FormLabel>
+            <FormLabel htmlFor="email">{t.contact.form.emailLabel}</FormLabel>
             <FormInput
               type="email"
               id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="seu@email.com"
+              placeholder={t.contact.form.emailPlaceholder}
               required
             />
           </FormGroup>
           <FormGroup>
-            <FormLabel htmlFor="message">Mensagem</FormLabel>
+            <FormLabel htmlFor="message">{t.contact.form.messageLabel}</FormLabel>
             <FormTextarea
               id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="Conte-me sobre seu projeto..."
+              placeholder={t.contact.form.messagePlaceholder}
               required
             />
           </FormGroup>
           <SubmitButton type="submit">
-            Enviar Mensagem
+            {t.contact.form.submit}
           </SubmitButton>
         </ContactForm>
         </ScrollReveal>

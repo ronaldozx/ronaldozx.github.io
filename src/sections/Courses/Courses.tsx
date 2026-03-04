@@ -9,6 +9,7 @@ import {
   FaLayerGroup,
 } from 'react-icons/fa';
 import { ScrollReveal } from '../../components';
+import { useLanguage } from '../../i18n/LanguageContext';
 import {
   CoursesSection,
   CoursesContainer,
@@ -131,15 +132,93 @@ const coursesData: Course[] = [
 ];
 
 export const Courses: React.FC = () => {
+  const { t } = useLanguage();
+
+  const coursesData: Course[] = [
+    {
+      icon: <FaSitemap size={22} color="#dd1b16" />,
+      platform: 'FIAP',
+      title: t.courses.items.fiap1,
+      duration: '',
+      tags: [
+        { label: 'Análise de Sistemas', color: '#dd1b16' },
+        { label: 'Prototipagem', color: '#ff6b6b' },
+        { label: 'UX/UI', color: '#ffa07a' },
+      ],
+      certificateUrl: 'https://on1.fiap.com.br/updown/DocumentosAssinados/e6c2082a-aa38-44ae-9e8c-64e6c7c0b0d7.pdf',
+      iconColor: '#dd1b16',
+    },
+    {
+      icon: <FaPaintBrush size={22} color="#dd1b16" />,
+      platform: 'FIAP',
+      title: t.courses.items.fiap2,
+      duration: '',
+      tags: [
+        { label: 'Design Web', color: '#dd1b16' },
+        { label: 'HTML', color: '#e34c26' },
+        { label: 'CSS', color: '#264de4' },
+      ],
+      certificateUrl: 'https://on1.fiap.com.br/updown/DocumentosAssinados/7f68b877-4ad8-46e8-9e1f-4e3055f59b25.pdf',
+      iconColor: '#dd1b16',
+    },
+    {
+      icon: <FaJs size={22} color="#f7df1e" />,
+      platform: 'Alura',
+      title: t.courses.items.alura1,
+      duration: '10h',
+      tags: [
+        { label: 'JavaScript', color: '#f7df1e' },
+      ],
+      certificateUrl: 'https://cursos.alura.com.br/certificate/619b55e5-6db4-40a5-a674-a91ff3c7873d?lang',
+      iconColor: '#f7df1e',
+    },
+    {
+      icon: <FaGitAlt size={22} color="#f34f29" />,
+      platform: 'Alura',
+      title: t.courses.items.alura2,
+      duration: '8h',
+      tags: [
+        { label: 'Git', color: '#f34f29' },
+        { label: 'GitHub', color: '#e2e8f0' },
+        { label: 'Versionamento', color: '#a78bfa' },
+      ],
+      certificateUrl: 'https://cursos.alura.com.br/certificate/8cd3e706-4aee-42db-991b-1cdcf917a6af?lang',
+      iconColor: '#f34f29',
+    },
+    {
+      icon: <FaReact size={22} color="#61dafb" />,
+      platform: 'Alura',
+      title: t.courses.items.alura3,
+      duration: '8h',
+      tags: [
+        { label: 'React', color: '#61dafb' },
+        { label: 'Full Stack', color: '#a78bfa' },
+      ],
+      certificateUrl: 'https://cursos.alura.com.br/certificate/8cd3e706-4aee-42db-991b-1cdcf917a6af?lang',
+      iconColor: '#61dafb',
+    },
+    {
+      icon: <FaNodeJs size={22} color="#68a063" />,
+      platform: 'Alura',
+      title: t.courses.items.alura4,
+      duration: '8h',
+      tags: [
+        { label: 'Node.js', color: '#68a063' },
+        { label: 'Express', color: '#aaaaaa' },
+        { label: 'API REST', color: '#f7df1e' },
+      ],
+      certificateUrl: 'https://cursos.alura.com.br/user/bofe-ronaldo18/course/node-primeira-api-express/certificate',
+      iconColor: '#68a063',
+    },
+  ];
+
   return (
     <CoursesSection id="cursos">
       <CoursesContainer>
         <ScrollReveal animation="fadeInUp">
           <SectionHeader>
-            <SectionTitle>Cursos & Certificações</SectionTitle>
-            <SectionSubtitle>
-              Aprendizado contínuo nas tecnologias que utilizo no dia a dia
-            </SectionSubtitle>
+            <SectionTitle>{t.courses.title}</SectionTitle>
+            <SectionSubtitle>{t.courses.subtitle}</SectionSubtitle>
           </SectionHeader>
         </ScrollReveal>
 

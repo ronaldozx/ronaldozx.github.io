@@ -1,5 +1,6 @@
 import React from 'react';
 import { ScrollReveal } from '../../components';
+import { useLanguage } from '../../i18n/LanguageContext';
 import {
   EducationSection,
   EducationContainer,
@@ -25,48 +26,45 @@ interface EducationEntry {
   description: string;
 }
 
-const educationData: EducationEntry[] = [
-  { 
-    institution: 'UNIP — Universidade Paulista',
-    course: 'Ciência da Computação (Bacharelado)',
-    period: '2023 — 2026',
-    status: 'cursando',
-    description:
-        'Curso superior de bacharelado com foco em fundamentos teóricos e práticos da computação, algoritmos, estruturas de dados, inteligência artificial e desenvolvimento de software. Participação em projetos acadêmicos usando Python, Java e C++.',
-  },
-  {
-    institution: 'FIAP',
-    course: 'Análise e Desenvolvimento de Sistemas (ADS)',
-    period: '2023 — 2024',
-    status: 'concluído',
-    description:
-      'Curso superior de tecnologia com ênfase em desenvolvimento de software, lógica de programação, banco de dados e metodologias ágeis. Desenvolvimento de projetos práticos usando Java, Spring Boot e React.',
-  },
-  {
-    institution: 'ETEC — Escola Técnica Estadual de SP',
-    course: 'Técnico em Desenvolvimento de Sistemas',
-    period: '2021 — 2022',
-    status: 'concluído',
-    description:
-      'Curso técnico com base sólida em lógica de programação, HTML, CSS, JavaScript, Java, PHP e banco de dados relacional. Desenvolvimento de projetos web completos do zero ao deploy.',
-  },
-];
-
 export const Education: React.FC = () => {
+  const { t } = useLanguage();
+
+  const institutionsList: EducationEntry[] = [
+    {
+      institution: t.education.institutions.unip.name,
+      course: t.education.institutions.unip.course,
+      period: t.education.institutions.unip.period,
+      status: t.education.institutions.unip.status.toLowerCase() as any,
+      description: t.education.institutions.unip.description,
+    },
+    {
+      institution: t.education.institutions.fiap.name,
+      course: t.education.institutions.fiap.course,
+      period: t.education.institutions.fiap.period,
+      status: t.education.institutions.fiap.status.toLowerCase() as any,
+      description: t.education.institutions.fiap.description,
+    },
+    {
+      institution: t.education.institutions.etec.name,
+      course: t.education.institutions.etec.course,
+      period: t.education.institutions.etec.period,
+      status: t.education.institutions.etec.status.toLowerCase() as any,
+      description: t.education.institutions.etec.description,
+    },
+  ];
+
   return (
     <EducationSection id="formacao">
       <EducationContainer>
         <ScrollReveal animation="fadeInUp">
           <SectionHeader>
-            <SectionTitle>Formação Acadêmica</SectionTitle>
-            <SectionSubtitle>
-              Minha trajetória educacional na área de tecnologia
-            </SectionSubtitle>
+            <SectionTitle>{t.education.title}</SectionTitle>
+            <SectionSubtitle>{t.education.subtitle}</SectionSubtitle>
           </SectionHeader>
         </ScrollReveal>
 
         <Timeline>
-          {educationData.map((entry, index) => (
+          {institutionsList.map((entry, index) => (
             <TimelineItem key={index}>
               <ScrollReveal animation="fadeInLeft" delay={index * 0.15}>
                 <EducationCard>

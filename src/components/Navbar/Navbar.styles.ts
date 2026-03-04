@@ -179,3 +179,9 @@ export const Dot = styled.div`
   background: rgba(255, 255, 255, 0.12);
   box-shadow: ${({ theme }) => theme.shadows.glow.primary};
 `;
+
+export const NavRight = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing.md};
+`;

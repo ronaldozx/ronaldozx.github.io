@@ -1,7 +1,7 @@
 import React from 'react';
-import { FaShieldAlt, FaCar, FaDragon, FaEnvelope, FaUsers } from 'react-icons/fa';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { ScrollReveal } from '../../components';
+import { useLanguage } from '../../i18n/LanguageContext';
 import {
   ProjectsSection,
   ProjectsContainer,
@@ -33,68 +33,63 @@ interface Project {
   githubUrl?: string;
 }
 
-const projects: Project[] = [
-  {
-    id: 1,
-    title: 'Dorothy',
-    description:
-      'Projeto feito durante o curso técnico na ETEC, voltado para ajudar mulheres e pessoas do grupo LGBTQIA+. Desenvolvido com Java e Firebase como banco de dados.',
-    icon: <FaShieldAlt size={40} color="#a78bfa" />,
-    tags: ['Java', 'Firebase', 'Android'],
-    githubUrl: 'https://github.com/ronaldozx/Aplicativo-Contra-Viol-ncia-Domestica-e-Viol-ncia-Contra-LGBTQIA-',
-  },
-  {
-    id: 2,
-    title: 'EasyCarros',
-    description:
-      'Desenvolvido no primeiro semestre da faculdade de ADS em parceria com a empresa BRQ. Alcancei o 4º lugar entre 250 projetos na competição. Desenvolvido em HTML, CSS e JavaScript.',
-    icon: <FaCar size={40} color="#61dafb" />,
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    githubUrl: 'https://github.com/ronaldozx/Projeto-Next-FIAP',
-  },
-  {
-    id: 3,
-    title: 'RPG em Texto',
-    description:
-      'Projeto desenvolvido em C++ no curso técnico da ETEC. Um RPG em texto onde o personagem é criado aleatoriamente e o final da história muda de acordo com as escolhas do jogador.',
-    icon: <FaDragon size={40} color="#f34f29" />,
-    tags: ['C++', 'Terminal', 'Lógica'],
-    githubUrl: 'https://github.com/ronaldozx/rpgEmTexto',
-  },
-  {
-    id: 4,
-    title: 'App Email LocaWeb',
-    description:
-      'Realizado durante a faculdade de ADS, desenvolvi um app de e-mail para a empresa LocaWeb utilizando Kotlin com Jetpack Compose e Firebase como banco de dados.',
-    icon: <FaEnvelope size={40} color="#f7df1e" />,
-    tags: ['Kotlin', 'Jetpack Compose', 'Firebase'],
-    githubUrl: 'https://github.com/ronaldozx/App-LocaWeb-Email',
-  },
-  {
-    id: 5,
-    title: 'Dev Cadastro',
-    description:
-      'Sistema de cadastro em React.js com criação, edição e remoção de usuários. Inclui lista dinâmica e modal para adicionar ou editar informações.',
-    icon: <FaUsers size={40} color="#68a063" />,
-    tags: ['React.js', 'JavaScript', 'CRUD'],
-    githubUrl: 'https://github.com/ronaldozx/Sistema-de-Cadastro-React'
-  },
-];
-
 export const Projects: React.FC = () => {
+  const { t } = useLanguage();
+
+  const projectsData: Project[] = [
+    {
+      id: 1,
+      title: t.projects.items.dorothy.title,
+      description: t.projects.items.dorothy.description,
+      image: '/projetoDorothy.png',
+      tags: ['Java', 'Firebase', 'Android'],
+      githubUrl: 'https://github.com/ronaldozx/Aplicativo-Contra-Viol-ncia-Domestica-e-Viol-ncia-Contra-LGBTQIA-',
+    },
+    {
+      id: 2,
+      title: t.projects.items.easyCarros.title,
+      description: t.projects.items.easyCarros.description,
+      image: '/projetoCarros.PNG',
+      tags: ['HTML', 'CSS', 'JavaScript'],
+      githubUrl: 'https://github.com/ronaldozx/Projeto-Next-FIAP',
+    },
+    {
+      id: 3,
+      title: t.projects.items.rpg.title,
+      description: t.projects.items.rpg.description,
+      image: '/rpgTxt.PNG',
+      tags: ['C++', 'Terminal', 'Lógica'],
+      githubUrl: 'https://github.com/ronaldozx/rpgEmTexto',
+    },
+    {
+      id: 4,
+      title: t.projects.items.locaWeb.title,
+      description: t.projects.items.locaWeb.description,
+      image: '/AppLocaWeb.PNG',
+      tags: ['Kotlin', 'Jetpack Compose', 'Firebase'],
+      githubUrl: 'https://github.com/ronaldozx/App-LocaWeb-Email',
+    },
+    {
+      id: 5,
+      title: t.projects.items.cadastro.title,
+      description: t.projects.items.cadastro.description,
+      image: '/cadastroReact.PNG',
+      tags: ['React.js', 'JavaScript', 'CRUD'],
+      githubUrl: 'https://github.com/ronaldozx/Sistema-de-Cadastro-React'
+    },
+  ];
+
   return (
     <ProjectsSection id="projetos">
       <ProjectsContainer>
         <ScrollReveal animation="fadeInUp">
           <SectionHeader>
-            <SectionTitle>Projetos em Destaque</SectionTitle>
-            <SectionSubtitle>
-              Alguns dos projetos mais interessantes que desenvolvi
-            </SectionSubtitle>
+            <SectionTitle>{t.projects.title}</SectionTitle>
+            <SectionSubtitle>{t.projects.subtitle}</SectionSubtitle>
           </SectionHeader>
         </ScrollReveal>
         <ProjectsGrid>
-          {projects.map((project, index) => (
+          {projectsData.map((project, index) => (
             <ScrollReveal
               key={project.id}
               animation="scaleIn"
@@ -124,7 +119,7 @@ export const Projects: React.FC = () => {
                       rel="noopener noreferrer"
                       className="primary"
                     >
-                      <FaExternalLinkAlt size={13} /> Ver Projeto
+                      <FaExternalLinkAlt size={13} /> {t.projects.viewProject}
                     </ProjectLink>
                   )}
                   {project.githubUrl && (
@@ -134,7 +129,7 @@ export const Projects: React.FC = () => {
                       rel="noopener noreferrer"
                       className="secondary"
                     >
-                      <FaGithub size={14} /> Código
+                      <FaGithub size={14} /> {t.projects.code}
                     </ProjectLink>
                   )}
                 </ProjectLinks>

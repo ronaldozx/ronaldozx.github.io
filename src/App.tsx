@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './styles/GlobalStyle';
 import { theme } from './styles/theme';
+import { LanguageProvider } from './i18n/LanguageContext';
 import { Navbar, GalaxyBackground, Footer, ScrollToTop, Intro } from './components';
 import { Hero, About, Skills, Education, Courses, Projects, Contact } from './sections';
 import { personalInfo, socialLinks, navItems } from './constants/personalInfo';
 
-const App: React.FC = () => {
+const AppContent: React.FC = () => {
   const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
@@ -36,13 +37,13 @@ const App: React.FC = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <GlobalStyle />
+      <GalaxyBackground />
       {showIntro ? (
         <Intro onComplete={handleIntroComplete} />
       ) : (
         <>
-          <GalaxyBackground />
           <Navbar logo="R" navItems={navItems} />
           <Hero personalInfo={personalInfo} socialLinks={socialLinks} />
           <About />
@@ -55,7 +56,17 @@ const App: React.FC = () => {
           <ScrollToTop />
         </>
       )}
-    </ThemeProvider>
+    </>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <LanguageProvider>
+      <ThemeProvider theme={theme}>
+        <AppContent />
+      </ThemeProvider>
+    </LanguageProvider>
   );
 };
 

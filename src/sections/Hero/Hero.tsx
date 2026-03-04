@@ -2,6 +2,7 @@ import React from 'react';
 import { FaDownload } from 'react-icons/fa';
 import { PersonalInfo, SocialLink } from '../../types';
 import { Button, ButtonRow, FloatingParticles, TechHUD } from '../../components';
+import { useLanguage } from '../../i18n/LanguageContext';
 import {
   HeroSection,
   HeroContent,
@@ -17,15 +18,17 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ personalInfo, socialLinks }) => {
+  const { t } = useLanguage();
+
   return (
     <HeroSection id="home">
       <FloatingParticles />
       <HeroContent>
-        <Greeting>{personalInfo.greeting}</Greeting>
+        <Greeting>{t.hero.greeting}</Greeting>
         <Name>
           {personalInfo.name} <span>{personalInfo.lastName}</span>
         </Name>
-        <Role>{personalInfo.role}</Role>
+        <Role>{t.hero.role}</Role>
         <ButtonRow>
           {socialLinks.map((link) => (
             <Button
@@ -47,7 +50,7 @@ export const Hero: React.FC<HeroProps> = ({ personalInfo, socialLinks }) => {
           variant="gradient"
           download
         >
-          Download Currículo
+          {t.hero.downloadCV}
         </Button>
       </HeroContent>
       <IllustrationContainer>

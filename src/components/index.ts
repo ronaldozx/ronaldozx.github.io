@@ -7,3 +7,4 @@ export { FloatingParticles } from './FloatingParticles';
 export { ScrollReveal } from './ScrollReveal';
 export { Intro } from './Intro';
 export { TechHUD } from './TechHUD';
+export { LanguageSwitcher } from './LanguageSwitcher';

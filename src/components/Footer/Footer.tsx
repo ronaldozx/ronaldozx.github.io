@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { useLanguage } from '../../i18n/LanguageContext';
 import {
   FooterContainer,
   FooterContent,
@@ -15,6 +16,8 @@ import {
 } from './Footer.styles';
 
 export const Footer: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <FooterContainer>
       <FooterContent>
@@ -45,17 +48,17 @@ export const Footer: React.FC = () => {
           </SocialLinks>
         </FooterSection>
         <FooterSection>
-          <FooterTitle>Links Rápidos</FooterTitle>
+          <FooterTitle>{t.footer.quickLinks}</FooterTitle>
           <FooterLinks>
-            <FooterLink href="#home">Home</FooterLink>
-            <FooterLink href="#sobre">Sobre</FooterLink>
-            <FooterLink href="#habilidades">Habilidades</FooterLink>
-            <FooterLink href="#projetos">Projetos</FooterLink>
-            <FooterLink href="#contato">Contato</FooterLink>
+            <FooterLink href="#home">{t.navbar.home}</FooterLink>
+            <FooterLink href="#sobre">{t.navbar.about}</FooterLink>
+            <FooterLink href="#habilidades">{t.skills.title}</FooterLink>
+            <FooterLink href="#projetos">{t.projects.title}</FooterLink>
+            <FooterLink href="#contato">{t.contact.title}</FooterLink>
           </FooterLinks>
         </FooterSection>
         <FooterSection>
-          <FooterTitle>Contato</FooterTitle>
+          <FooterTitle>{t.footer.contactSection}</FooterTitle>
           <FooterLinks>
             <FooterLink href="mailto:bofe.ronaldo18@gmail.com">bofe.ronaldo18@gmail.com</FooterLink>
             <FooterLink href="tel:+5511941756013">
@@ -66,7 +69,7 @@ export const Footer: React.FC = () => {
         </FooterSection>
       </FooterContent>
       <FooterBottom>
-        © 2026 Ronaldo César.
+        {t.footer.copyright}
       </FooterBottom>
     </FooterContainer>
   );
