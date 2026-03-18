@@ -6,7 +6,7 @@ export const personalInfo: PersonalInfo = {
   name: 'Ronaldo César',
   lastName: 'Del Papa Bofe',
   role: 'Desenvolvedor Web Junior',
-  resumeUrl: '/Curriculo.pdf',
+  resumeUrl: '/curriculo.pdf',
   imageUrl: '/eu.png',
 };
 
